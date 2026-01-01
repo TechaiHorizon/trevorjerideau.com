@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Trevor Jerideau">
+	<main>
+		<div class="container">
+			<header>
+				<h1>Trevor Jerideau</h1>
+				<p class="tagline">Welcome to my personal website</p>
+				<nav>
+					<a href="/">Home</a>
+					<a href="/about">About</a>
+				</nav>
+			</header>
+
+			<section class="about">
+				<h2>About Me</h2>
+				<p>
+					This is the personal website of Trevor Jerideau. More content coming soon.
+				</p>
+			</section>
+
+			<section class="contact">
+				<h2>Get in Touch</h2>
+				<p>Feel free to reach out via email or connect on social media.</p>
+			</section>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 auto;
+		padding: 2rem;
+		max-width: 900px;
+	}
+
+	.container {
+		line-height: 1.6;
+	}
+
+	header {
+		text-align: center;
+		margin-bottom: 3rem;
+		padding: 2rem 0;
+		border-bottom: 2px solid var(--gray-light);
+	}
+
+	nav {
+		margin-top: 1.5rem;
+		display: flex;
+		gap: 1.5rem;
+		justify-content: center;
+	}
+
+	nav a {
+		color: var(--accent);
+		text-decoration: none;
+		font-size: 1.1rem;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		transition: background 0.2s;
+	}
+
+	nav a:hover {
+		background: #f0f0f0;
+		text-decoration: none;
+	}
+
+	h1 {
+		font-size: 3rem;
+		margin: 0;
+		color: var(--black);
+	}
+
+	.tagline {
+		font-size: 1.2rem;
+		color: var(--gray);
+		margin-top: 0.5rem;
+	}
+
+	section {
+		margin-bottom: 2.5rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+		color: #444;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid var(--gray-light);
+		padding-bottom: 0.5rem;
+	}
+
+	p {
+		font-size: 1.1rem;
+		color: #555;
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 2rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+		}
+
+		main {
+			padding: 1rem;
+		}
+	}
+</style>
