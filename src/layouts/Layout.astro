@@ -2,26 +2,85 @@
 interface Props {
 	title: string;
 	description?: string;
+	image?: string;
+	url?: string;
 }
 
-const { title, description = "Personal website of Trevor Jerideau" } = Astro.props;
+const { 
+	title, 
+	description = "Grammy Award-winning record executive Trevor Jerideau. Over 20 years of music industry experience with 30+ billion streams. Former SVP of A&R at RCA Records.",
+	image = "https://trevorjerideau.com/og-image.jpg",
+	url = Astro.url.href
+} = Astro.props;
+
+const siteTitle = title.includes("Trevor Jerideau") ? title : `${title} | Trevor Jerideau`;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="author" content="Trevor Jerideau" />
 		
-		<!-- SEO Meta Tags -->
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
+		<!-- Primary Meta Tags -->
+		<title>{siteTitle}</title>
+		<meta name="title" content={siteTitle} />
+		<meta name="description" content={description} />
+		<meta name="author" content="Trevor Jerideau" />
+		<meta name="keywords" content="Trevor Jerideau, Grammy Award, music executive, record executive, A&R, RCA Records, Jazmine Sullivan, Alicia Keys, music industry, producer, consultant" />
+		<link rel="canonical" href={url} />
+		
+		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content={url} />
+		<meta property="og:title" content={siteTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:site_name" content="Trevor Jerideau" />
+		
+		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
+		<meta name="twitter:url" content={url} />
+		<meta name="twitter:title" content={siteTitle} />
 		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:site" content="@trevamir" />
+		<meta name="twitter:creator" content="@trevamir" />
+		
+		<!-- Schema.org JSON-LD for Person -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Trevor Jerideau",
+			"url": "https://trevorjerideau.com",
+			"image": "https://trevorjerideau.com/og-image.jpg",
+			"jobTitle": "Record Executive & Music Industry Consultant",
+			"description": "Grammy Award-winning record executive with over 20 years of experience in the music industry",
+			"award": [
+				"Grammy Award for Best R&B Album (2021) - Jazmine Sullivan 'Heaux Tales'",
+				"NAACP Image Award for Outstanding Album (2021)"
+			],
+			"alumniOf": "Fordham University",
+			"knowsAbout": [
+				"Music Production",
+				"Artist Development",
+				"A&R",
+				"Record Label Management",
+				"Music Industry Consulting"
+			],
+			"sameAs": [
+				"https://www.linkedin.com/in/trevorjerideau",
+				"https://www.instagram.com/trevamir",
+				"https://www.imdb.com/name/nm5839127/",
+				"https://www.discogs.com/artist/1876443-Trevor-Jerideau"
+			],
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Independent Music Consultant"
+			}
+		}
+		</script>
 		
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -29,8 +88,6 @@ const { title, description = "Personal website of Trevor Jerideau" } = Astro.pro
 		<!-- Preconnect to improve performance -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		
-		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
