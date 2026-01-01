@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact | Trevor Jerideau" description="Get in touch with Trevor Jerideau">
+	<header class="site-header">
+		<div class="header-container">
+			<a href="/" class="logo">TREVOR JERIDEAU</a>
+			<nav class="main-nav">
+				<a href="/">Home</a>
+				<a href="/about">About</a>
+				<a href="/work">Work</a>
+				<a href="/contact">Contact</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="page-content">
+		<div class="content-container">
+			<h1 class="page-title">Get in Touch</h1>
+			
+			<div class="contact-content">
+				<section class="contact-info">
+					<p class="contact-intro">
+						Feel free to reach out for collaborations, inquiries, or just to say hello.
+					</p>
+					
+					<div class="contact-methods">
+						<div class="contact-method">
+							<h2>Email</h2>
+							<p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+						</div>
+
+						<div class="contact-method">
+							<h2>Social Media</h2>
+							<div class="social-links">
+								<!-- Add your social media links -->
+								<a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+								<a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+								<a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<footer class="site-footer">
+		<p>&copy; {new Date().getFullYear()} by Trevor Jerideau</p>
+	</footer>
+</Layout>
+
+<style>
+	/* Header Styles */
+	.site-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: var(--color-bg);
+		border-bottom: 1px solid var(--color-border);
+		z-index: 1000;
+		padding: 1.5rem 0;
+	}
+
+	.header-container {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		font-size: 1.1rem;
+		font-weight: 500;
+		letter-spacing: 0.5px;
+		color: var(--color-text);
+	}
+
+	.main-nav {
+		display: flex;
+		gap: 2.5rem;
+	}
+
+	.main-nav a {
+		font-size: 0.95rem;
+		color: var(--color-text);
+		position: relative;
+	}
+
+	.main-nav a:hover {
+		opacity: 1;
+	}
+
+	.main-nav a::after {
+		content: '';
+		position: absolute;
+		bottom: -4px;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background: var(--color-text);
+		transition: width 0.3s ease;
+	}
+
+	.main-nav a:hover::after {
+		width: 100%;
+	}
+
+	/* Page Content */
+	.page-content {
+		min-height: 100vh;
+		padding-top: 120px;
+		padding-bottom: 4rem;
+	}
+
+	.content-container {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.page-title {
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		font-weight: 300;
+		margin-bottom: 3rem;
+		color: var(--color-text);
+		letter-spacing: -0.02em;
+	}
+
+	.contact-intro {
+		font-size: 1.25rem;
+		line-height: 1.8;
+		color: var(--color-text-light);
+		margin-bottom: 3rem;
+	}
+
+	.contact-methods {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.contact-method h2 {
+		font-size: 1.5rem;
+		font-weight: 400;
+		margin-bottom: 1rem;
+		color: var(--color-text);
+		border-bottom: 1px solid var(--color-border);
+		padding-bottom: 0.5rem;
+	}
+
+	.contact-method p {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: var(--color-text-light);
+	}
+
+	.contact-method a {
+		color: var(--color-text);
+		text-decoration: underline;
+		text-decoration-color: var(--color-border);
+		text-underline-offset: 3px;
+		transition: text-decoration-color 0.2s ease;
+	}
+
+	.contact-method a:hover {
+		text-decoration-color: var(--color-text);
+		opacity: 1;
+	}
+
+	.social-links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.social-links a {
+		font-size: 1.1rem;
+		color: var(--color-text);
+		text-decoration: underline;
+		text-decoration-color: var(--color-border);
+		text-underline-offset: 3px;
+		transition: text-decoration-color 0.2s ease;
+	}
+
+	.social-links a:hover {
+		text-decoration-color: var(--color-text);
+		opacity: 1;
+	}
+
+	/* Footer */
+	.site-footer {
+		background: var(--color-bg-alt);
+		padding: 2rem;
+		text-align: center;
+		border-top: 1px solid var(--color-border);
+	}
+
+	.site-footer p {
+		font-size: 0.875rem;
+		color: var(--color-text-light);
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.header-container {
+			padding: 0 1.5rem;
+		}
+
+		.content-container {
+			padding: 0 1.5rem;
+		}
+
+		.main-nav {
+			gap: 1.5rem;
+		}
+
+		.main-nav a {
+			font-size: 0.875rem;
+		}
+
+		.page-content {
+			padding-top: 100px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.main-nav {
+			display: none;
+		}
+
+		.logo {
+			margin: 0 auto;
+		}
+	}
+</style>
