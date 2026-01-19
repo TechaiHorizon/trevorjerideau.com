@@ -47,21 +47,24 @@ const siteTitle = title.includes("Trevor Jerideau") ? title : `${title} | Trevor
 		<meta name="twitter:site" content="@trevamir" />
 		<meta name="twitter:creator" content="@trevamir" />
 		
-		<!-- Schema.org JSON-LD for Person -->
+		<!-- Schema.org JSON-LD for Person (Deep Entity Graph) -->
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
 			"@type": "Person",
 			"name": "Trevor Jerideau",
 			"url": "https://trevorjerideau.com",
-			"image": "https://trevorjerideau.com/og-image.jpg",
+			"image": "https://trevorjerideau.com/trevor-headshot.png",
 			"jobTitle": "Record Executive & Music Industry Consultant",
 			"description": "Grammy Award-winning record executive with over 20 years of experience in the music industry",
 			"award": [
 				"Grammy Award for Best R&B Album (2021) - Jazmine Sullivan 'Heaux Tales'",
 				"NAACP Image Award for Outstanding Album (2021)"
 			],
-			"alumniOf": "Fordham University",
+			"alumniOf": {
+				"@type": "CollegeOrUniversity",
+				"name": "Fordham University"
+			},
 			"knowsAbout": [
 				"Music Production",
 				"Artist Development",
@@ -75,9 +78,9 @@ const siteTitle = title.includes("Trevor Jerideau") ? title : `${title} | Trevor
 				"https://www.imdb.com/name/nm5839127/",
 				"https://www.discogs.com/artist/1876443-Trevor-Jerideau"
 			],
-			"worksFor": {
-				"@type": "Organization",
-				"name": "Independent Music Consultant"
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://trevorjerideau.com/about"
 			}
 		}
 		</script>

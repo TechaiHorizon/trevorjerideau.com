@@ -27,25 +27,51 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</header>
 
-	<main class="hero-section">
-		<div class="hero-container">
-				<div class="hero-image">
-					<img src="/trevor-headshot.png" alt="Trevor Jerideau - Grammy Award-Winning Record Executive" />
+	<main>
+		<section class="hero-section">
+			<div class="hero-container">
+					<div class="hero-image">
+						<img src="/trevor-headshot.png" alt="Trevor Jerideau - Grammy Award-Winning Record Executive" />
+					</div>
+				<div class="hero-content">
+					<h1 class="hero-title">
+						TREVOR<br>JERIDEAU
+					</h1>
+						<p class="hero-tagline">
+						Grammy Award-Winning Record Executive | Music Industry Leader | Entrepreneur
+						</p>
 				</div>
-			<div class="hero-content">
-				<h1 class="hero-title">
-					TREVOR<br>JERIDEAU
-				</h1>
-					<p class="hero-tagline">
-					Grammy Award-Winning Record Executive | Music Industry Leader | Entrepreneur
-					</p>
 			</div>
-		</div>
+		</section>
+
+		<section class="authority-section">
+			<div class="container">
+				<div class="authority-grid">
+					<div class="authority-item">
+						<h3>Grammy Winner</h3>
+						<p>Awarded for Best R&B Album as a producer on Jazmine Sullivan's "Heaux Tales".</p>
+					</div>
+					<div class="authority-item">
+						<h3>20+ Years Experience</h3>
+						<p>Senior leadership roles at RCA Records and J Records under Clive Davis.</p>
+					</div>
+					<div class="authority-item">
+						<h3>30B+ Streams</h3>
+						<p>Career contributions to projects garnering over 30 billion equivalent streams.</p>
+					</div>
+				</div>
+				
+				<div class="intro-text">
+					<p>Trevor Jerideau is a distinguished music industry leader and entrepreneur with a proven track record of artist development and commercial success. Throughout his career, he has been instrumental in shaping the trajectories of global icons and emerging talents alike, combining deep creative intuition with strategic business acumen.</p>
+					<a href="/about" class="cta-link">Read Official Bio →</a>
+				</div>
+			</div>
+		</section>
 	</main>
 
-		<footer class="site-footer">
-			<p>&copy; 2021 by Trevor Jerideau</p>
-		</footer>
+	<footer class="site-footer">
+		<p>&copy; 2021 by Trevor Jerideau</p>
+	</footer>
 </Layout>
 
 <style>
@@ -129,10 +155,11 @@ import Layout from '../layouts/Layout.astro';
 
 	/* Hero Section */
 	.hero-section {
-		min-height: 100vh;
+		min-height: 80vh;
 		display: flex;
 		align-items: center;
-		padding-top: 80px;
+		padding-top: 120px;
+		padding-bottom: 60px;
 	}
 
 	.hero-container {
@@ -150,23 +177,8 @@ import Layout from '../layouts/Layout.astro';
 		position: relative;
 		aspect-ratio: 3/4;
 		overflow: hidden;
-		max-width: 400px;
+		max-width: 320px; /* Reduced from 400px */
 		margin: 0 auto;
-	}
-
-	.placeholder-image {
-		width: 100%;
-		height: 100%;
-		background: var(--color-bg-alt);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: 2px dashed var(--color-border);
-	}
-
-	.placeholder-image p {
-		color: var(--color-text-light);
-		font-size: 0.9rem;
 	}
 
 	.hero-image img {
@@ -196,9 +208,61 @@ import Layout from '../layouts/Layout.astro';
 		max-width: 500px;
 	}
 
+	/* Authority Section */
+	.authority-section {
+		padding: 80px 0;
+		background: var(--color-bg-alt);
+		border-top: 1px solid var(--color-border);
+	}
+
+	.authority-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
+		margin-bottom: 60px;
+	}
+
+	.authority-item h3 {
+		font-size: 1.25rem;
+		font-weight: 500;
+		margin-bottom: 1rem;
+		color: var(--color-text);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.authority-item p {
+		color: var(--color-text-light);
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+
+	.intro-text {
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.intro-text p {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		color: var(--color-text);
+		margin-bottom: 2rem;
+		font-weight: 300;
+	}
+
+	.cta-link {
+		display: inline-block;
+		font-weight: 500;
+		color: var(--color-text);
+		border-bottom: 1px solid var(--color-text);
+		padding-bottom: 4px;
+		transition: opacity 0.2s ease;
+	}
+
 	/* Footer */
 	.site-footer {
-		background: var(--color-bg-alt);
+		background: var(--color-bg);
 		padding: 2rem;
 		text-align: center;
 		border-top: 1px solid var(--color-border);
@@ -218,8 +282,7 @@ import Layout from '../layouts/Layout.astro';
 		}
 
 		.hero-image {
-			max-width: 500px;
-			margin: 0 auto;
+			max-width: 280px;
 		}
 
 		.hero-content {
@@ -228,6 +291,12 @@ import Layout from '../layouts/Layout.astro';
 
 		.hero-tagline {
 			margin: 0 auto;
+		}
+
+		.authority-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			text-align: center;
 		}
 	}
 
