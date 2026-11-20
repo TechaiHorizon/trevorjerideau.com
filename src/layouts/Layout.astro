@@ -1,19 +1,56 @@
 ---
 interface Props {
-	title: string;
+	title?: string;
 	description?: string;
 	image?: string;
-	url?: string;
+	noindex?: boolean;
 }
 
-const { 
-	title, 
-	description = "Grammy Award-winning record executive Trevor Jerideau. Over 20 years of music industry experience with 30+ billion streams. Former SVP of A&R at RCA Records.",
-	image = "https://trevorjerideau.com/og-image.jpg",
-	url = Astro.url.href
+const {
+	title = 'Trevor Jerideau — Grammy Award-Winning Music Executive',
+	description = 'Trevor Jerideau is a Grammy Award-winning music executive and former RCA SVP of A&R. Explore his biography, artist collaborations, and contact information.',
+	image = 'https://trevorjerideau.com/images/trevor-portrait.webp',
+	noindex = false,
 } = Astro.props;
 
-const siteTitle = title.includes("Trevor Jerideau") ? title : `${title} | Trevor Jerideau`;
+const canonicalUrl = 'https://trevorjerideau.com/';
+const siteTitle = title.includes('Trevor Jerideau') ? title : `${title} | Trevor Jerideau`;
+const person = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	'@id': `${canonicalUrl}#person`,
+	name: 'Trevor Jerideau',
+	url: canonicalUrl,
+	image: 'https://trevorjerideau.com/images/trevor-portrait.webp',
+	jobTitle: 'Music Executive',
+	description: 'Trevor Jerideau is a Grammy Award-winning music executive and former Senior Vice President of A&R at RCA Records. He co-produced Jazmine Sullivan’s 2021 album Heaux Tales, a Best R&B Album winner. He has worked with Alicia Keys, Jazmine Sullivan and Busta Rhymes, and signed Tinashe and Blood Orange.',
+	award: [
+		'Grammy Award — co-producing Jazmine Sullivan’s Heaux Tales, Best R&B Album',
+		'NAACP Image Award',
+		'Foundation for Ethnic Understanding Young Leadership Award',
+	],
+	alumniOf: {
+		'@type': 'CollegeOrUniversity',
+		name: 'Fordham University',
+	},
+	hasCredential: {
+		'@type': 'EducationalOccupationalCredential',
+		name: 'Finance degree',
+		credentialCategory: 'Degree',
+		recognizedBy: {
+			'@type': 'CollegeOrUniversity',
+			name: 'Fordham University',
+		},
+	},
+	sameAs: [
+		'https://www.linkedin.com/in/trevorjerideau',
+		'https://www.instagram.com/trevamir',
+	],
+	mainEntityOfPage: {
+		'@type': 'WebPage',
+		'@id': canonicalUrl,
+	},
+};
 ---
 
 <!doctype html>
@@ -21,77 +58,39 @@ const siteTitle = title.includes("Trevor Jerideau") ? title : `${title} | Trevor
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
-		<!-- Primary Meta Tags -->
+		<meta name="theme-color" content="#070707" />
 		<title>{siteTitle}</title>
-		<meta name="title" content={siteTitle} />
 		<meta name="description" content={description} />
 		<meta name="author" content="Trevor Jerideau" />
-		<meta name="keywords" content="Trevor Jerideau, Grammy Award, music executive, record executive, A&R, RCA Records, Jazmine Sullivan, Alicia Keys, music industry, producer, consultant" />
-		<link rel="canonical" href={url} />
-		
-		<!-- Open Graph / Facebook -->
+		<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+		<link rel="canonical" href={canonicalUrl} />
+
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content={url} />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:title" content={siteTitle} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={image} />
+		<meta property="og:image:alt" content="Portrait of Trevor Jerideau" />
 		<meta property="og:site_name" content="Trevor Jerideau" />
-		
-		<!-- Twitter -->
+
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content={url} />
 		<meta name="twitter:title" content={siteTitle} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={image} />
-		<meta name="twitter:site" content="@trevamir" />
-		<meta name="twitter:creator" content="@trevamir" />
-		
-		<!-- Schema.org JSON-LD for Person (Deep Entity Graph) -->
-		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "Person",
-			"name": "Trevor Jerideau",
-			"url": "https://trevorjerideau.com",
-			"image": "https://trevorjerideau.com/trevor-headshot.png",
-			"jobTitle": "Record Executive & Music Industry Consultant",
-			"description": "Grammy Award-winning record executive with over 20 years of experience in the music industry",
-			"award": [
-				"Grammy Award for Best R&B Album (2021) - Jazmine Sullivan 'Heaux Tales'",
-				"NAACP Image Award for Outstanding Album (2021)"
-			],
-			"alumniOf": {
-				"@type": "CollegeOrUniversity",
-				"name": "Fordham University"
-			},
-			"knowsAbout": [
-				"Music Production",
-				"Artist Development",
-				"A&R",
-				"Record Label Management",
-				"Music Industry Consulting"
-			],
-			"sameAs": [
-				"https://www.linkedin.com/in/trevorjerideau",
-				"https://www.instagram.com/trevamir",
-				"https://www.imdb.com/name/nm5839127/",
-				"https://www.discogs.com/artist/1876443-Trevor-Jerideau"
-			],
-			"mainEntityOfPage": {
-				"@type": "WebPage",
-				"@id": "https://trevorjerideau.com/about"
-			}
-		}
-		</script>
-		
+		<meta name="twitter:image:alt" content="Portrait of Trevor Jerideau" />
+
+		{!noindex && (
+			<script type="application/ld+json" set:html={JSON.stringify(person).replace(/</g, '\\u003c')} />
+		)}
+
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<link rel="apple-touch-icon" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		
-		<!-- Preconnect to improve performance -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+		<slot name="head" />
 	</head>
 	<body>
 		<slot />
@@ -100,20 +99,22 @@ const siteTitle = title.includes("Trevor Jerideau") ? title : `${title} | Trevor
 
 <style is:global>
 	:root {
-		--color-text: #1a1a1a;
-		--color-text-light: #666666;
-		--color-bg: #ffffff;
-		--color-bg-alt: #f8f8f8;
-		--color-border: #e0e0e0;
-		--color-accent: #2563eb;
-		--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+		color-scheme: dark;
+		--color-text: #f2f1ed;
+		--color-text-light: #aaa9a4;
+		--color-bg: #070707;
+		--color-bg-alt: #111111;
+		--color-border: #30302e;
+		--color-accent: #f2f1ed;
+		--font-sans: 'Space Grotesk', sans-serif;
+		--font-mono: 'IBM Plex Mono', monospace;
 		--spacing-unit: 1rem;
 	}
 
-	* {
+	*,
+	*::before,
+	*::after {
 		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
 	}
 
 	html {
@@ -126,23 +127,21 @@ const siteTitle = title.includes("Trevor Jerideau") ? title : `${title} | Trevor
 	}
 
 	body {
+		margin: 0;
 		min-height: 100vh;
-		line-height: 1.6;
+		line-height: 1.5;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
-		font-weight: 400;
-		line-height: 1.2;
+	h1, h2, h3, h4, h5, h6, p, figure {
+		margin: 0;
 	}
 
 	a {
-		color: var(--color-text);
-		text-decoration: none;
-		transition: opacity 0.2s ease;
+		color: inherit;
 	}
 
-	a:hover {
-		opacity: 0.7;
+	button, input, textarea, select {
+		font: inherit;
 	}
 
 	img {
@@ -151,16 +150,14 @@ const siteTitle = title.includes("Trevor Jerideau") ? title : `${title} | Trevor
 		display: block;
 	}
 
-	/* Utility classes */
-	.container {
-		max-width: 1400px;
-		margin: 0 auto;
-		padding: 0 2rem;
+	:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 5px;
 	}
 
-	@media (max-width: 768px) {
-		.container {
-			padding: 0 1.5rem;
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto !important;
 		}
 	}
 </style>

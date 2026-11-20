@@ -1,178 +1,41 @@
-# Trevor Jerideau's Personal Website
+# Trevor Jerideau
 
-A lightweight, modern personal website built with **Astro** and **Markdown**, designed for easy content management and free hosting on GitHub Pages.
+A one-page editorial portfolio built with Astro 5 and published to GitHub Pages at **https://trevorjerideau.com**.
 
-## 🚀 Features
+Repository: [TechaiHorizon/trevorjerideau.com](https://github.com/TechaiHorizon/trevorjerideau.com).
 
-- **Markdown-based content** - Write pages in simple Markdown
-- **Fast & lightweight** - Built with Astro for optimal performance
-- **Responsive design** - Looks great on all devices
-- **Free hosting** - Deployed automatically to GitHub Pages
-- **Easy to customize** - Clean, simple codebase
+## Edit the site
 
-## 📁 Project Structure
+- `src/pages/index.astro`: homepage content, sections, and page-specific styling.
+- `src/layouts/Layout.astro`: document metadata, Person JSON-LD, Google Fonts, and minimal global styles.
+- `public/`: static assets, including images, favicon, domain configuration, and `robots.txt`.
+- `astro.config.mjs`: production domain and homepage-only sitemap configuration.
+- `src/pages/about.astro`, `work.astro`, and `contact.astro`: preserved legacy routes that redirect to `/#biography`, `/#artists`, and `/#contact`. Keep their anchor destinations in sync with the homepage.
 
-```
-/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml       # GitHub Actions deployment workflow
-├── public/                  # Static assets (favicon, images, etc.)
-├── src/
-│   ├── layouts/
-│   │   ├── Layout.astro           # Base HTML layout
-│   │   └── MarkdownLayout.astro   # Layout for Markdown pages
-│   └── pages/
-│       ├── index.astro      # Homepage
-│       └── about.md         # About page (Markdown example)
-├── astro.config.mjs         # Astro configuration
-└── package.json
-```
+Use only approved biographical facts. Do not add unverified metrics, award dates, credentials, or contact details. The Space Grotesk and IBM Plex Mono fonts load through the Google Fonts CDN.
 
-## 🛠️ Setup Instructions
+## Develop and check
 
-### 1. Create GitHub Repository
-
-1. Go to [GitHub](https://github.com) and create a new repository
-2. Name it `trevorjerideau.com` (or any name you prefer)
-3. **Do NOT** initialize with README, .gitignore, or license
-
-### 2. Push Code to GitHub
-
-From your local project directory, run:
+Use Node.js 22 and pnpm 9 to match the deployment workflow. From the repository root:
 
 ```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/trevorjerideau.com.git
-git push -u origin main
+pnpm install
+pnpm dev
 ```
 
-Replace `YOUR_USERNAME` with your GitHub username.
+The development server runs at `http://localhost:4321`. Before publishing:
 
-### 3. Enable GitHub Pages
+```bash
+pnpm build
+pnpm preview
+```
 
-1. Go to your repository on GitHub
-2. Click **Settings** → **Pages** (in the left sidebar)
-3. Under **Source**, select **GitHub Actions**
-4. The workflow will automatically deploy your site
+The static production build is written to `dist/`. Check the homepage on desktop and mobile, keyboard focus, section navigation, image loading, and legacy route redirects.
 
-### 4. Access Your Website
+## Publish
 
-Your site will be available at:
-- `https://YOUR_USERNAME.github.io/trevorjerideau.com/` (if repo name is trevorjerideau.com)
-- Or `https://YOUR_USERNAME.github.io/` (if repo name is YOUR_USERNAME.github.io)
+Commit reviewed changes and push them to `main`. The existing `.github/workflows/deploy.yml` workflow automatically builds and deploys the site to GitHub Pages on every push to `main`; it also supports a manual run from the repository’s **Actions** tab.
 
-## 🌐 Custom Domain Setup (Optional)
+In repository **Settings → Pages**, use **GitHub Actions** as the source and retain `trevorjerideau.com` as the custom domain with HTTPS enabled. Keep domain configuration aligned with `astro.config.mjs` and `public/robots.txt`. Check the deployment workflow completes successfully before verifying the live site.
 
-### Using Cloudflare (Free)
-
-1. **Buy your domain** (trevorjerideau.com) from any registrar
-2. **Add domain to Cloudflare**:
-   - Sign up at [Cloudflare](https://cloudflare.com)
-   - Add your domain
-   - Update nameservers at your registrar
-
-3. **Configure DNS in Cloudflare**:
-   - Add these DNS records:
-     ```
-     Type: CNAME
-     Name: @
-     Target: YOUR_USERNAME.github.io
-     Proxy: Enabled (orange cloud)
-
-     Type: CNAME
-     Name: www
-     Target: YOUR_USERNAME.github.io
-     Proxy: Enabled (orange cloud)
-     ```
-
-4. **Configure GitHub Pages**:
-   - Go to repository **Settings** → **Pages**
-   - Under **Custom domain**, enter `trevorjerideau.com`
-   - Check **Enforce HTTPS**
-
-5. **Update Astro config**:
-   Edit `astro.config.mjs`:
-   ```javascript
-   export default defineConfig({
-     site: 'https://trevorjerideau.com',
-   });
-   ```
-
-6. **Create CNAME file**:
-   Add a file `public/CNAME` with content:
-   ```
-   trevorjerideau.com
-   ```
-
-7. **Push changes and wait** for DNS propagation (can take 24-48 hours)
-
-## 📝 Adding Content
-
-### Create a New Markdown Page
-
-1. Create a new `.md` file in `src/pages/`:
-   ```bash
-   src/pages/blog.md
-   ```
-
-2. Add frontmatter and content:
-   ```markdown
-   ---
-   layout: ../layouts/MarkdownLayout.astro
-   title: Blog
-   ---
-
-   # My Blog
-
-   This is my blog page content in **Markdown**.
-   ```
-
-3. The page will be automatically available at `/blog`
-
-### Edit Existing Pages
-
-- **Homepage**: Edit `src/pages/index.astro`
-- **About page**: Edit `src/pages/about.md`
-- **Styling**: Modify the `<style>` sections in layout files
-
-## 🧞 Commands
-
-All commands are run from the root of the project:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-
-## 💡 Tips
-
-- **Local development**: Run `pnpm dev` to see changes in real-time
-- **Markdown files** automatically become pages at their file path
-- **Images**: Place in `public/` folder and reference as `/image.png`
-- **Styling**: Use the global styles in `Layout.astro` or component-specific styles
-
-## 📚 Resources
-
-- [Astro Documentation](https://docs.astro.build)
-- [Markdown Guide](https://www.markdownguide.org/)
-- [GitHub Pages Docs](https://docs.github.com/en/pages)
-- [Cloudflare DNS Setup](https://developers.cloudflare.com/dns/)
-
-## 🎨 Customization Ideas
-
-- Add a blog with Markdown posts
-- Create a portfolio section
-- Add contact form (using Formspree or similar)
-- Integrate analytics (Google Analytics, Plausible)
-- Add dark mode toggle
-- Include social media links
-
----
-
-Built with ❤️ using [Astro](https://astro.build)
+This static site requires no API keys or custom deployment secrets. The workflow uses GitHub’s built-in Pages permissions and token. Never commit credentials, private keys, or `.env` files.

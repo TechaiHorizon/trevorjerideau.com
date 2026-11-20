@@ -1,27 +1,18 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://trevorjerideau.github.io',
-
-  // When deploying to custom domain, update to: 'https://trevorjerideau.com'
-
-  // Uncomment base if using repository name in URL
-  // base: '/trevorjerideau.com',
-
-  // Build optimizations
+  site: 'https://trevorjerideau.com',
   build: {
-      inlineStylesheets: 'auto',
-	},
-
-  // Compression and performance
+    inlineStylesheets: 'auto',
+  },
   compressHTML: true,
-
-  // SEO enhancements
   trailingSlash: 'ignore',
-
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Legacy routes remain available but should not be indexed separately.
+      filter: (page) => new URL(page).pathname === '/',
+    }),
+  ],
 });
