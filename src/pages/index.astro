@@ -43,6 +43,7 @@ const grid = Array.from({ length: 64 }, (_, i) => {
   const row = Math.floor(i / 8), col = i % 8;
   return (row === 1 && col >= 1 && col <= 6) || (row === 2 && col >= 1 && col <= 6) || (row >= 3 && row <= 6 && col >= 3 && col <= 4) || (row === 5 && col === 6);
 });
+const lightOrder = grid.map((filled, index) => filled ? grid.slice(0, index).filter(Boolean).length : -1);
 ---
 
 <Layout title="Trevor Jerideau | Grammy Award-Winning Music Executive & Producer" description="Explore Trevor Jerideau’s official biography, artist credits, soundtrack work and current projects. Grammy Award-winning music executive and producer.">
@@ -53,7 +54,7 @@ const grid = Array.from({ length: 64 }, (_, i) => {
       <a href="#biography">Biography</a><a href="#artists">The work</a><a href="#archive">Archive</a><a href="#contact">Contact</a>
     </nav>
     <a class="grid-mark" href="#top" aria-label="Trevor Jerideau geometric T mark — back to top">
-      {grid.map(filled => <span class:list={{ filled }}></span>)}
+      {grid.map((filled, index) => <span class:list={{ filled }} aria-hidden="true" style={filled ? `--cell-delay: ${lightOrder[index] * 0.4}s` : undefined}></span>)}
     </a>
   </header>
 
