@@ -7,7 +7,7 @@ const artists = [
     { album: 'Songs in A Minor', year: '2001', role: 'Contributed to the making of the album', note: 'Multi-Grammy-winning · Seven-times-platinum debut' },
     { album: 'The Diary of Alicia Keys', year: '2003', role: 'Contributed to the making of the album', note: 'Five-times-platinum follow-up' },
   ] },
-  { name: 'Jazmine Sullivan', category: 'SIGNING / A&R / CO-PRODUCTION', intro: 'Signed to RCA. A creative partnership spanning four defining releases.', works: [
+  { name: 'Jazmine Sullivan', category: 'SIGNING / A&R / CO-PRODUCTION', intro: 'Signed to RCA. A creative partnership spanning four defining releases.', currentWork: 'In the studio working on Jazmine Sullivan’s forthcoming album, slated for release in 2027.', works: [
     { album: 'Fearless', year: '2008', role: 'A&R', note: 'Platinum debut · Five Grammy nominations' },
     { album: 'Love Me Back', year: '2010', role: 'Co-producer', note: 'Critically acclaimed second album' },
     { album: 'Reality Show', year: '2015', role: 'Co-producer', note: 'Three Grammy nominations' },
@@ -19,6 +19,7 @@ const artists = [
   ] },
   { name: 'Tinashe', category: 'ARTIST SIGNING', intro: 'Signed the boundary-pushing R&B artist during his tenure at RCA.', works: [] },
   { name: 'Blood Orange', category: 'ARTIST SIGNING', intro: 'Signed the visionary, genre-defying alt-pop artist.', works: [] },
+  { name: 'Mario', category: 'ARTIST COLLABORATION', intro: 'Career credits include work with R&B artist Mario.', works: [] },
 ];
 const archive = [
   { file: 'trevor-family-clive', label: 'Connections', alt: 'A personal event photograph from Trevor Jerideau’s archive' },
@@ -42,7 +43,7 @@ const grid = Array.from({ length: 64 }, (_, i) => {
 });
 ---
 
-<Layout title="Trevor Jerideau | Grammy Award-Winning Music Executive & Producer" description="The official portfolio of Trevor Jerideau: Grammy Award-winning music executive, producer and former RCA SVP of A&R. Full biography, artist credits and career archive.">
+<Layout title="Trevor Jerideau | Grammy Award-Winning Music Executive & Producer" description="Explore Trevor Jerideau’s official biography, artist credits, soundtrack work and current projects. Grammy Award-winning music executive and producer.">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="wordmark" href="#top" aria-label="Trevor Jerideau — back to top">TREVOR<br />JERIDEAU</a>
@@ -93,6 +94,7 @@ const grid = Array.from({ length: 64 }, (_, i) => {
           <div class="bio-part"><h3 class="mono">01 — THE FOUNDATION / ARISTA & J RECORDS</h3><p>Originally from Long Island, Jerideau earned his degree in finance at Fordham University but ultimately decided to pursue his love of music by interning in A&R at Arista Records—a turn of events that soon led to his working closely with legendary mogul Clive Davis. After exiting Arista, Davis handpicked Jerideau as an A&R manager for his newly launched J Records. Quickly progressing to A&R director, Jerideau aided in the signing of Busta Rhymes and A&R-ing 2001’s platinum-selling <em>Genesis</em> and 2002’s gold-selling <em>It Ain’t Safe No More...</em> He also served as an essential force in the making of Alicia Keys’s multi-Grammy-winning, seven-times-platinum debut <em>Songs in A Minor</em> and its five-times-platinum follow-up <em>The Diary of Alicia Keys</em>.</p></div>
           <div class="bio-part"><h3 class="mono">02 — ARTIST DEVELOPMENT / RCA RECORDS</h3><p>With J Records later folded into RCA, Jerideau was next appointed SVP of A&R at RCA and signed such visionary artists as Jazmine Sullivan. After A&R-ing Sullivan’s platinum-selling full-length debut <em>Fearless</em> (a 2008 release that nabbed her five Grammy nominations), Jerideau went on to co-produce 2010’s widely lauded <em>Love Me Back</em>, 2015’s three-time Grammy-nominated <em>Reality Show</em>, and 2021’s gold-certified <em>Heaux Tales</em> (a Grammy winner for Best R&B Album). In addition, Jerideau signed boundary-pushing artists like R&B phenom Tinashe and alt-pop polymath Blood Orange. All told, Jerideau’s contributions have helped to generate album sales in the tens of millions to date.</p></div>
           <div class="bio-part"><h3 class="mono">03 — AN INDEPENDENT VISION / 2021 ONWARD</h3><p>Since leaving his position at RCA in 2021, Jerideau has worked with the label in a consulting capacity while embarking on the launch of his own production/publishing company—an enterprise uniquely rooted in the blockchain, for the sake of providing full financial transparency for artists. A community leader whose accolades include an NAACP Image Award and the Foundation for Ethnic Understanding’s Young Leadership Award, Jerideau regards the company as a crucial next step in his mission of cultivating sustainable careers for artists with a profound cultural impact.</p></div>
+          <div class="bio-part"><h3 class="mono">04 — FURTHER CREDITS & CURRENT WORK</h3><p>Jerideau’s career also includes work with R&B artist Mario and contributions to the soundtracks for <em>The Best Man</em> and <em>Uncle Drew</em>. He is currently in the studio working on Jazmine Sullivan’s forthcoming album, slated for release in 2027.</p></div>
         </div>
       </div>
     </section>
@@ -103,10 +105,18 @@ const grid = Array.from({ length: 64 }, (_, i) => {
       <div class="artist-list">
         {artists.map((artist, index) => <details class="artist-row" open={index === 1}>
           <summary><span class="artist-number mono">0{index + 1}</span><h3>{artist.name}</h3><span class="artist-category mono">{artist.category}</span><span class="artist-toggle" aria-hidden="true">+</span></summary>
-          <div class="artist-body"><p>{artist.intro}</p>{artist.works.length > 0 && <div class="record-grid">{artist.works.map(work => <article class="record"><span class="record-year mono">{work.year} / {work.role}</span><h4>{work.album}</h4><p>{work.note}</p></article>)}</div>}</div>
+          <div class="artist-body"><p>{artist.intro}</p>{artist.currentWork && <aside class="project-update" aria-label="Current Jazmine Sullivan project"><span class="mono">CURRENT WORK / SLATED FOR 2027</span><p>{artist.currentWork}</p></aside>}{artist.works.length > 0 && <div class="record-grid">{artist.works.map(work => <article class="record"><span class="record-year mono">{work.year} / {work.role}</span><h4>{work.album}</h4><p>{work.note}</p></article>)}</div>}</div>
         </details>)}
       </div>
       <div class="mentor-note"><span class="mono">EXECUTIVE COLLABORATION</span><p><strong>Clive Davis.</strong> A formative mentor and collaborator, from Arista to the launch of J Records.</p><span aria-hidden="true">↗</span></div>
+      <section class="soundtrack-work" id="soundtracks" aria-labelledby="soundtracks-heading">
+        <div class="section-kicker mono"><span>02.B / SOUNDTRACK WORK</span><span>BEYOND THE ALBUM</span></div>
+        <h3 id="soundtracks-heading">MUSIC FOR<br />THE SCREEN.</h3>
+        <div class="record-grid">
+          <article class="record soundtrack-credit"><span class="record-year mono">01 / FILM SOUNDTRACK</span><h4>The Best Man</h4><p>Soundtrack contribution.</p></article>
+          <article class="record soundtrack-credit"><span class="record-year mono">02 / FILM SOUNDTRACK</span><h4>Uncle Drew</h4><p>Soundtrack contribution.</p></article>
+        </div>
+      </section>
     </section>
 
     <section class="archive page-pad light-section" id="archive" aria-labelledby="archive-heading">
