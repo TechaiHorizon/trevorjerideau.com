@@ -1,0 +1,102 @@
+[
+  {
+    "artist": "Alicia Keys",
+    "albums": [
+      { "title": "Songs in A Minor", "url": "https://music.apple.com/us/album/songs-in-a-minor/256936779", "service": "Apple Music" },
+      { "title": "The Diary of Alicia Keys", "url": "https://music.apple.com/us/album/the-diary-of-alicia-keys/255342344", "service": "Apple Music" }
+    ],
+    "singles": []
+  },
+  {
+    "artist": "Jazmine Sullivan",
+    "albums": [
+      { "title": "Fearless", "url": "https://music.apple.com/us/album/fearless/290555287", "service": "Apple Music" },
+      { "title": "Love Me Back", "url": "https://music.apple.com/us/album/love-me-back/395108614", "service": "Apple Music" },
+      { "title": "Reality Show", "url": "https://music.apple.com/us/album/reality-show/947112492", "service": "Apple Music" },
+      { "title": "Heaux Tales", "url": "https://music.apple.com/us/album/heaux-tales/1547280994", "service": "Apple Music" }
+    ],
+    "singles": []
+  },
+  {
+    "artist": "Busta Rhymes",
+    "albums": [
+      { "title": "Genesis", "url": "https://music.apple.com/us/album/genesis/1506982209", "service": "Apple Music" },
+      { "title": "It Ain’t Safe No More...", "url": "https://music.apple.com/us/album/it-aint-safe-no-more/255357071", "service": "Apple Music" }
+    ],
+    "singles": [
+      { "title": "Break Ya Neck", "url": "https://music.apple.com/us/song/break-ya-neck/1511197967", "service": "Apple Music" },
+      { "title": "Pass the Courvoisier Part II", "url": "https://music.apple.com/us/song/pass-the-courvoisier-part-ii-feat-p-diddy-pharrell-williams/1511198461", "service": "Apple Music" },
+      { "title": "I Know What You Want", "url": "https://music.apple.com/us/song/i-know-what-you-want-feat-flipmode-squad/255357717", "service": "Apple Music" },
+      { "title": "Make It Clap", "url": "https://music.apple.com/us/song/make-it-clap-feat-spliff-star/255357611", "service": "Apple Music" }
+    ]
+  },
+  {
+    "artist": "Tinashe",
+    "albums": [
+      { "title": "Aquarius", "url": "https://music.apple.com/us/album/aquarius/911472229", "service": "Apple Music" },
+      { "title": "Nightride", "url": "https://music.apple.com/us/album/nightride/1171507241", "service": "Apple Music" },
+      { "title": "Joyride", "url": "https://music.apple.com/us/album/joyride/1363218539", "service": "Apple Music" }
+    ],
+    "singles": [
+      { "title": "2 On", "url": "https://music.apple.com/us/album/aquarius/911472229", "service": "Apple Music" },
+      { "title": "Pretend", "url": "https://music.apple.com/us/album/aquarius/911472229", "service": "Apple Music" },
+      { "title": "All Hands on Deck", "url": "https://music.apple.com/us/album/aquarius/911472229", "service": "Apple Music" },
+      { "title": "Company", "url": "https://music.apple.com/us/album/nightride/1171507241", "service": "Apple Music" },
+      { "title": "Party Favors", "url": "https://music.apple.com/us/album/nightride/1171507241", "service": "Apple Music" },
+      { "title": "Ride of Your Life", "url": "https://music.apple.com/us/album/nightride/1171507241", "service": "Apple Music" },
+      { "title": "No Drama", "url": "https://music.apple.com/us/album/joyride/1363218539", "service": "Apple Music" },
+      { "title": "Faded Love", "url": "https://music.apple.com/us/album/joyride/1363218539", "service": "Apple Music" },
+      { "title": "Me So Bad", "url": "https://music.apple.com/us/album/joyride/1363218539", "service": "Apple Music" },
+      { "title": "Stuck with Me", "url": "https://music.apple.com/us/album/joyride/1363218539", "service": "Apple Music" }
+    ]
+  },
+  {
+    "artist": "Marsha Ambrosius",
+    "albums": [
+      { "title": "Late Nights & Early Mornings", "url": "https://music.apple.com/us/album/late-nights-early-mornings/417432464", "service": "Apple Music" },
+      { "title": "Friends & Lovers", "url": "https://music.apple.com/us/album/friends-lovers/889340858", "service": "Apple Music" }
+    ],
+    "singles": [
+      { "title": "Far Away", "url": "https://music.apple.com/us/album/far-away-single/413523237", "service": "Apple Music" },
+      { "title": "Hope She Cheats on You (With a Basketball Player)", "url": "https://music.apple.com/us/album/hope-she-cheats-on-you-with-a-basketball-player-single/385808658", "service": "Apple Music" },
+      { "title": "Late Nights & Early Mornings", "url": "https://music.apple.com/us/song/late-nights-early-mornings/417432467", "service": "Apple Music" },
+      { "title": "Run", "url": "https://music.apple.com/us/song/run/889375408", "service": "Apple Music" },
+      { "title": "Stronger", "url": "https://music.apple.com/us/song/stronger-feat-dr-dre/889375397", "service": "Apple Music" },
+      { "title": "Spend All My Time", "url": "https://music.apple.com/us/song/spend-all-my-time-feat-charlie-wilson/889375409", "service": "Apple Music" },
+      { "title": "Streets of London", "url": "https://music.apple.com/us/song/streets-of-london-feat-skye-lindsey-stirling/889375413", "service": "Apple Music" }
+    ]
+  },
+  {
+    "artist": "Cassidy",
+    "albums": [
+      { "title": "Split Personality", "url": "https://music.apple.com/us/album/split-personality/298267322", "service": "Apple Music" },
+      { "title": "I’m a Hustla", "url": "https://music.apple.com/us/album/im-a-hustla/251039224", "service": "Apple Music" },
+      { "title": "B.A.R.S. The Barry Adrian Reese Story", "url": "https://music.apple.com/us/album/b-a-r-s-the-barry-adrian-reese-story/267340099", "service": "Apple Music" }
+    ],
+    "singles": [
+      { "title": "Hotel", "url": "https://music.apple.com/us/album/split-personality/298267322", "service": "Apple Music" },
+      { "title": "Get No Better", "url": "https://music.apple.com/us/album/get-no-better-single/254517172", "service": "Apple Music" },
+      { "title": "I’m a Hustla", "url": "https://music.apple.com/us/album/im-a-hustla-single/253288614", "service": "Apple Music" },
+      { "title": "B-Boy Stance", "url": "https://music.apple.com/us/album/im-a-hustla/251039224", "service": "Apple Music" },
+      { "title": "My Drink n My 2 Step", "url": "https://music.apple.com/us/album/my-drink-n-my-2-step-feat-swizz-beatz-radio-edit-single/263494498", "service": "Apple Music" }
+    ]
+  },
+  {
+    "artist": "Yung Wun",
+    "albums": [
+      { "title": "The Dirtiest Thirstiest", "url": "https://music.apple.com/us/album/the-dirtiest-thirstiest/271388912", "service": "Apple Music" }
+    ],
+    "singles": [
+      { "title": "Tear It Up", "url": "https://open.spotify.com/track/4ppoMdBh6uLdQFAsJxja7Z", "service": "Spotify" },
+      { "title": "Walk It, Talk It", "url": "https://open.spotify.com/track/2KKA7q7El0EZeqoUIkotuI", "service": "Spotify" }
+    ]
+  },
+  {
+    "artist": "Mashonda",
+    "albums": [],
+    "singles": [
+      { "title": "Back of da Club", "url": "https://music.apple.com/us/album/back-of-da-club-single/253196416", "service": "Apple Music" },
+      { "title": "Blackout", "url": "https://music.apple.com/us/album/blackout-feat-snoop-dogg-single/476175766", "service": "Apple Music" }
+    ]
+  }
+]

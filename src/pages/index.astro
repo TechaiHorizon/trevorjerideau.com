@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/portfolio.css';
+import musicLinks from '../data/music-links.json';
+import { albumDestination, linkedMusicNote } from '../lib/music-links';
 
 const artists = [
   { name: 'Alicia Keys', category: 'ARTIST DEVELOPMENT / A&R', intro: 'An essential force in the making of two landmark albums.', works: [
@@ -28,8 +30,16 @@ const artists = [
     { album: 'Late Nights & Early Mornings', year: '2011', role: 'Album producer / A&R', note: 'J Records debut. No. 2 on the Billboard 200 and No. 1 on Top R&B/Hip-Hop Albums, with 96,400 first-week copies sold. “Far Away” reached No. 3 on Hot R&B/Hip-Hop Songs and No. 74 on the Hot 100, and earned two 2012 Grammy nominations: Best R&B Song and Best R&B Performance. It won the 2011 Soul Train Record of the Year (Ashford & Simpson Songwriter’s Award), received a 2011 BET Video of the Year nomination and was honored among the award-winning songs at the 2012 BMI Urban Music Awards. Other singles include “Hope She Cheats on You (With a Basketball Player)” (No. 22, Hot R&B/Hip-Hop Songs) and the title track.' },
     { album: 'Friends & Lovers', year: '2014', role: 'Album producer / A&R', note: 'RCA follow-up. No. 12 on the Billboard 200 and No. 2 on both Top R&B/Hip-Hop Albums and Top R&B Albums. Debuted with approximately 17,000 copies sold and was Billboard’s Hot Shot Debut on Top R&B/Hip-Hop Albums. “Run” reached No. 13 on Adult R&B Airplay and No. 44 on R&B/Hip-Hop Airplay. Includes “Stronger,” featuring Dr. Dre and reworking Sade’s “Stronger Than Pride”; “Spend All My Time,” featuring Charlie Wilson; and “Streets of London,” featuring Skye and Lindsey Stirling.' },
   ] },
+  { name: 'Swizz Beatz', category: 'LABEL DEAL / FULL SURFACE', intro: 'Secured a multimillion-dollar deal for Swizz Beatz’s Full Surface Records at Clive Davis’s newly formed J Records—one of the label’s early hip-hop partnerships. The releases below showcase Full Surface’s J Records/RCA Music Group-era catalog achievements alongside Trevor’s label-deal credit.', works: [
+    { album: 'Full Surface Records', year: 'J RECORDS / RCA MUSIC GROUP', role: 'Label partnership', note: 'A hip-hop and R&B label partnership distributed through J Records, which became part of RCA Music Group. Its early roster included Cassidy, Yung Wun and Mashonda. Trevor’s credit here is the Full Surface deal; the following cards highlight the label’s releases rather than individual album-production or A&R roles.' },
+    { album: 'Split Personality', year: '2004', role: 'Cassidy / Full Surface catalog', note: 'Full Surface/J Records debut. RIAA Gold (U.S.). No. 2 on the Billboard 200 and No. 1 on Top R&B/Hip-Hop Albums. Breakout single “Hotel” reached No. 4 on the Hot 100, No. 6 on Hot R&B/Hip-Hop Songs and No. 3 on the UK Singles Chart. “Get No Better,” featuring Mashonda, reached No. 82 on the Hot 100. Other album guests include Snoop Dogg, Styles P and Jadakiss.' },
+    { album: 'The Dirtiest Thirstiest', year: '2004', role: 'Yung Wun / Full Surface catalog', note: 'Full Surface/J Records debut. No. 50 on Top R&B/Hip-Hop Albums, No. 24 on Top Rap Albums and No. 11 on Heatseekers Albums. “Tear It Up,” featuring DMX, Lil’ Flip and David Banner, reached No. 76 on the Hot 100 and No. 39 on Hot R&B/Hip-Hop Songs. “Walk It, Talk It,” featuring David Banner, reached No. 97 on Hot R&B/Hip-Hop Songs. The album also features Cassidy.' },
+    { album: 'I’m a Hustla', year: '2005', role: 'Cassidy / Full Surface catalog', note: 'Full Surface/J Records release. No. 5 on the Billboard 200 and No. 2 on both Top R&B/Hip-Hop Albums and Top Rap Albums. “I’m a Hustla,” produced by Swizz Beatz, reached No. 34 on the Hot 100 and No. 5 on Hot Rap Songs, and earned a 2005 Vibe Award nomination for Street Anthem. The song is RIAA Gold as a digital single and Platinum as a mastertone/ringtone—not an album certification. Includes “B-Boy Stance,” with album guests Nas, Mario, Lil Wayne, Fabolous and Mary J. Blige.' },
+    { album: 'January Joy', year: '2005', role: 'Mashonda / Full Surface catalog', note: 'Full Surface/J Records R&B debut. Features Kanye West, Snoop Dogg, Jadakiss, Nas and Raphael Saadiq. Singles “Back of da Club” and “Blackout” reached No. 86 and No. 96, respectively, on Hot R&B/Hip-Hop Songs. Swizz Beatz served as executive producer and produced “Back of da Club.”' },
+    { album: 'B.A.R.S. The Barry Adrian Reese Story', year: '2007', role: 'Cassidy / Full Surface catalog', note: 'Full Surface/J Records release. No. 10 on the Billboard 200, No. 3 on Top R&B/Hip-Hop Albums and No. 2 on Top Rap Albums. “My Drink n My 2 Step,” featuring Swizz Beatz, reached No. 33 on the Hot 100 and No. 11 on Hot R&B/Hip-Hop Songs. “Innocent Man (Misunderstood),” featuring Mark Morrison, reached No. 3 on Bubbling Under Hot 100 Singles. Album guests include John Legend, Eve and Bone Thugs-n-Harmony.' },
+  ] },
 ];
-const additionalArtists = ['Swizz Beatz', 'A$AP Rocky'];
+const additionalArtists = ['A$AP Rocky'];
 const archive = [
   { file: 'trevor-family-clive', label: 'Trevor Jerideau and Alicia Keys', alt: 'Trevor Jerideau and Alicia Keys' },
   { file: 'trevor-industry-event', label: 'Trevor Jerideau and Clive Davis', alt: 'Trevor Jerideau and Clive Davis' },
@@ -117,7 +127,10 @@ const lightOrder = grid.map((filled, index) => filled ? grid.slice(0, index).fil
       <div class="artist-list">
         {artists.map((artist, index) => <details class="artist-row" open={index === 1}>
           <summary><span class="artist-number mono">0{index + 1}</span><h3>{artist.name}</h3><span class="artist-category mono">{artist.category}</span><span class="artist-toggle" aria-hidden="true">+</span></summary>
-          <div class="artist-body"><p>{artist.intro}</p>{artist.currentWork && <aside class="project-update" aria-label="Current Jazmine Sullivan project"><span class="mono">CURRENT WORK / SLATED FOR 2027</span><p>{artist.currentWork}</p></aside>}{artist.works.length > 0 && <div class="record-grid">{artist.works.map(work => <article class="record"><span class="record-year mono">{work.year} / {work.role}</span><h4>{work.album}</h4><p>{work.note}</p></article>)}</div>}</div>
+          <div class="artist-body"><p>{artist.intro}</p>{artist.currentWork && <aside class="project-update" aria-label="Current Jazmine Sullivan project"><span class="mono">CURRENT WORK / SLATED FOR 2027</span><p>{artist.currentWork}</p></aside>}{artist.works.length > 0 && <div class="record-grid">{artist.works.map(work => {
+            const destination = albumDestination(musicLinks, artist.name, work.album);
+            return <article class="record"><span class="record-year mono">{work.year} / {work.role}</span><h4>{destination ? <a class="record-album-link" href={destination.url} target="_blank" rel="noopener noreferrer" aria-label={`Listen to ${work.album} on ${destination.service} (opens in a new tab)`}>{work.album}</a> : work.album}</h4><p>{linkedMusicNote(musicLinks, artist.name, work.note).map(part => part.destination ? <a class="record-song-link" href={part.destination.url} target="_blank" rel="noopener noreferrer" aria-label={`Listen to ${part.destination.title} on ${part.destination.service} (opens in a new tab)`}>{part.text}</a> : part.text)}</p></article>;
+          })}</div>}</div>
         </details>)}
         {additionalArtists.map((name, index) => <div class="artist-row"><div class="artist-name-only"><span class="artist-number mono">{String(artists.length + index + 1).padStart(2, '0')}</span><h3>{name}</h3></div></div>)}
       </div>
