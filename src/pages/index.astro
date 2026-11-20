@@ -21,6 +21,7 @@ const artists = [
   { name: 'Blood Orange', category: 'ARTIST SIGNING', intro: 'Signed the visionary, genre-defying alt-pop artist.', works: [] },
   { name: 'Mario', category: 'ARTIST COLLABORATION', intro: 'Career credits include work with R&B artist Mario.', works: [] },
 ];
+const additionalArtists = ['Swizz Beatz', 'A$AP Rocky'];
 const archive = [
   { file: 'trevor-family-clive', label: 'Trevor Jerideau and Alicia Keys', alt: 'Trevor Jerideau and Alicia Keys' },
   { file: 'trevor-industry-event', label: 'Trevor Jerideau and Clive Davis', alt: 'Trevor Jerideau and Clive Davis' },
@@ -89,7 +90,7 @@ const lightOrder = grid.map((filled, index) => filled ? grid.slice(0, index).fil
       <div class="chapter-heading"><h2 id="bio-heading">THE VISION.<br />THE JOURNEY.</h2><span class="mono">LONG ISLAND → NEW YORK</span></div>
       <div class="bio-grid">
         <aside class="bio-aside">
-          <figure><img src="/images/trevor-clive-davis.webp" alt="Trevor Jerideau with Clive Davis" width="750" height="719" loading="lazy" /><figcaption class="mono">WITH CLIVE DAVIS / THE EARLY CHAPTERS</figcaption></figure>
+          <figure><img src="/images/trevor-clive-davis.webp" alt="Trevor Jerideau, Busta Rhymes and Swizz Beatz" width="750" height="719" loading="lazy" /><figcaption class="mono">Trevor Jerideau, Busta Rhymes and Swizz Beatz</figcaption></figure>
           <div class="career-index mono"><span>CAREER INDEX</span><ol><li><span>01</span> ARISTA RECORDS</li><li><span>02</span> J RECORDS</li><li><span>03</span> RCA RECORDS</li><li><span>04</span> INDEPENDENT VISION</li></ol></div>
         </aside>
         <div class="bio-copy">
@@ -97,7 +98,7 @@ const lightOrder = grid.map((filled, index) => filled ? grid.slice(0, index).fil
           <div class="bio-part"><h3 class="mono">01 — THE FOUNDATION / ARISTA & J RECORDS</h3><p>Originally from Long Island, Jerideau earned his degree in finance at Fordham University but ultimately decided to pursue his love of music by interning in A&R at Arista Records—a turn of events that soon led to his working closely with legendary mogul Clive Davis. After exiting Arista, Davis handpicked Jerideau as an A&R manager for his newly launched J Records. Quickly progressing to A&R director, Jerideau aided in the signing of Busta Rhymes and A&R-ing 2001’s platinum-selling <em>Genesis</em> and 2002’s gold-selling <em>It Ain’t Safe No More...</em> He also served as an essential force in the making of Alicia Keys’s multi-Grammy-winning, seven-times-platinum debut <em>Songs in A Minor</em> and its five-times-platinum follow-up <em>The Diary of Alicia Keys</em>.</p></div>
           <div class="bio-part"><h3 class="mono">02 — ARTIST DEVELOPMENT / RCA RECORDS</h3><p>With J Records later folded into RCA, Jerideau was next appointed SVP of A&R at RCA and signed such visionary artists as Jazmine Sullivan. After A&R-ing Sullivan’s platinum-selling full-length debut <em>Fearless</em> (a 2008 release that nabbed her five Grammy nominations), Jerideau went on to co-produce 2010’s widely lauded <em>Love Me Back</em>, 2015’s three-time Grammy-nominated <em>Reality Show</em>, and 2021’s gold-certified <em>Heaux Tales</em> (a Grammy winner for Best R&B Album). In addition, Jerideau signed boundary-pushing artists like R&B phenom Tinashe and alt-pop polymath Blood Orange. All told, Jerideau’s contributions have helped to generate album sales in the tens of millions to date.</p></div>
           <div class="bio-part"><h3 class="mono">03 — AN INDEPENDENT VISION / 2021 ONWARD</h3><p>Since leaving his position at RCA in 2021, Jerideau has worked with the label in a consulting capacity while embarking on the launch of his own production/publishing company—an enterprise uniquely rooted in the blockchain, for the sake of providing full financial transparency for artists. A community leader whose accolades include an NAACP Image Award and the Foundation for Ethnic Understanding’s Young Leadership Award, Jerideau regards the company as a crucial next step in his mission of cultivating sustainable careers for artists with a profound cultural impact.</p></div>
-          <div class="bio-part"><h3 class="mono">04 — FURTHER CREDITS & CURRENT WORK</h3><p>Jerideau’s career also includes work with R&B artist Mario and contributions to the soundtracks for <em>The Best Man</em> and <em>Uncle Drew</em>. He is currently in the studio working on Jazmine Sullivan’s forthcoming album, slated for release in 2027.</p></div>
+          <div class="bio-part"><h3 class="mono">04 — FURTHER CREDITS & CURRENT WORK</h3><p>Jerideau’s career also includes work with Mario, Swizz Beatz and A$AP Rocky, and contributions to the soundtracks for <em>The Best Man</em> and <em>Uncle Drew</em>. He is currently in the studio working on Jazmine Sullivan’s forthcoming album, slated for release in 2027.</p></div>
         </div>
       </div>
     </section>
@@ -110,6 +111,7 @@ const lightOrder = grid.map((filled, index) => filled ? grid.slice(0, index).fil
           <summary><span class="artist-number mono">0{index + 1}</span><h3>{artist.name}</h3><span class="artist-category mono">{artist.category}</span><span class="artist-toggle" aria-hidden="true">+</span></summary>
           <div class="artist-body"><p>{artist.intro}</p>{artist.currentWork && <aside class="project-update" aria-label="Current Jazmine Sullivan project"><span class="mono">CURRENT WORK / SLATED FOR 2027</span><p>{artist.currentWork}</p></aside>}{artist.works.length > 0 && <div class="record-grid">{artist.works.map(work => <article class="record"><span class="record-year mono">{work.year} / {work.role}</span><h4>{work.album}</h4><p>{work.note}</p></article>)}</div>}</div>
         </details>)}
+        {additionalArtists.map((name, index) => <div class="artist-row"><div class="artist-name-only"><span class="artist-number mono">{String(artists.length + index + 1).padStart(2, '0')}</span><h3>{name}</h3></div></div>)}
       </div>
       <div class="mentor-note"><span class="mono">EXECUTIVE COLLABORATION</span><p><strong>Clive Davis.</strong> A formative mentor and collaborator, from Arista to the launch of J Records.</p><span aria-hidden="true">↗</span></div>
       <section class="soundtrack-work" id="soundtracks" aria-labelledby="soundtracks-heading">
