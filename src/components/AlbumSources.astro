@@ -1,0 +1,16 @@
+---
+import recordSources from '../data/record-sources.json';
+
+interface Props {
+  artist: string;
+  album: string;
+}
+
+const { artist, album } = Astro.props;
+const entry = recordSources.find(source => source.artist === artist && source.album === album);
+---
+
+{entry && entry.links.length > 0 && <div class="record-sources mono" aria-label={`Chart and certification sources for ${album}`}>
+  <span>Sources:</span>
+  {entry.links.map(source => <a class="record-source-link" href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`${source.label}: sources for ${album} (opens in a new tab)`}>{source.label} <span aria-hidden="true">↗</span></a>)}
+</div>}

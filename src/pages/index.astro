@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/portfolio.css';
 import musicLinks from '../data/music-links.json';
 import { albumDestination, linkedMusicNote } from '../lib/music-links';
+import AlbumSources from '../components/AlbumSources.astro';
 
 const artists = [
   { name: 'Alicia Keys', category: 'ARTIST DEVELOPMENT / A&R', intro: 'An essential force in the making of two landmark albums.', works: [
@@ -129,7 +130,7 @@ const lightOrder = grid.map((filled, index) => filled ? grid.slice(0, index).fil
           <summary><span class="artist-number mono">0{index + 1}</span><h3>{artist.name}</h3><span class="artist-category mono">{artist.category}</span><span class="artist-toggle" aria-hidden="true">+</span></summary>
           <div class="artist-body"><p>{artist.intro}</p>{artist.currentWork && <aside class="project-update" aria-label="Current Jazmine Sullivan project"><span class="mono">CURRENT WORK / SLATED FOR 2027</span><p>{artist.currentWork}</p></aside>}{artist.works.length > 0 && <div class="record-grid">{artist.works.map(work => {
             const destination = albumDestination(musicLinks, artist.name, work.album);
-            return <article class="record"><span class="record-year mono">{work.year} / {work.role}</span><h4>{destination ? <a class="record-album-link" href={destination.url} target="_blank" rel="noopener noreferrer" aria-label={`Listen to ${work.album} on ${destination.service} (opens in a new tab)`}>{work.album}</a> : work.album}</h4><p>{linkedMusicNote(musicLinks, artist.name, work.note).map(part => part.destination ? <a class="record-song-link" href={part.destination.url} target="_blank" rel="noopener noreferrer" aria-label={`Listen to ${part.destination.title} on ${part.destination.service} (opens in a new tab)`}>{part.text}</a> : part.text)}</p></article>;
+            return <article class="record"><span class="record-year mono">{work.year} / {work.role}</span><h4>{destination ? <a class="record-album-link" href={destination.url} target="_blank" rel="noopener noreferrer" aria-label={`Listen to ${work.album} on ${destination.service} (opens in a new tab)`}>{work.album}</a> : work.album}</h4><p>{linkedMusicNote(musicLinks, artist.name, work.note).map(part => part.destination ? <a class="record-song-link" href={part.destination.url} target="_blank" rel="noopener noreferrer" aria-label={`Listen to ${part.destination.title} on ${part.destination.service} (opens in a new tab)`}>{part.text}</a> : part.text)}</p><AlbumSources artist={artist.name} album={work.album} /></article>;
           })}</div>}</div>
         </details>)}
         {additionalArtists.map((name, index) => <div class="artist-row"><div class="artist-name-only"><span class="artist-number mono">{String(artists.length + index + 1).padStart(2, '0')}</span><h3>{name}</h3></div></div>)}

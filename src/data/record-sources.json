@@ -1,0 +1,292 @@
+[
+  {
+    "artist": "Alicia Keys",
+    "album": "Songs in A Minor",
+    "links": [
+      {
+        "label": "RIAA",
+        "url": "https://www.riaa.com/gold-platinum/?tab_active=default-award&ar=Alicia+Keys&ti=&lab=&genre=&format=Album&date_option=release&from=&to=&award=&type=&category=&adv=SEARCH#search_section"
+      }
+    ]
+  },
+  {
+    "artist": "Alicia Keys",
+    "album": "The Diary of Alicia Keys",
+    "links": [
+      {
+        "label": "RIAA",
+        "url": "https://www.riaa.com/gold-platinum/?tab_active=default-award&ar=Alicia+Keys&ti=The+Diary+of+Alicia+Keys&format=Album&type=&award=&from=&to=&adv=SEARCH#search_section"
+      }
+    ]
+  },
+  {
+    "artist": "Jazmine Sullivan",
+    "album": "Fearless",
+    "links": [
+      {
+        "label": "RIAA",
+        "url": "https://www.riaa.com/gold-platinum/?tab_active=default-award&se=Jazmine+Sullivan#search_section"
+      }
+    ]
+  },
+  {
+    "artist": "Jazmine Sullivan",
+    "album": "Love Me Back",
+    "links": [
+      {
+        "label": "Billboard 200",
+        "url": "https://www.billboard.com/charts/billboard-200/2010-12-18/"
+      },
+      {
+        "label": "Billboard R&B/Hip-Hop",
+        "url": "https://www.billboard.com/charts/r-b-hip-hop-albums/2010-12-18/"
+      },
+      {
+        "label": "RIAA",
+        "url": "https://www.riaa.com/gold-platinum/?tab_active=default-award&ar=Jazmine+Sullivan&ti=&lab=&genre=&format=&date_option=release&from=&to=&award=&type=&category=&adv=SEARCH#search_section"
+      }
+    ]
+  },
+  {
+    "artist": "Busta Rhymes",
+    "album": "Genesis",
+    "links": [
+      {
+        "label": "RIAA",
+        "url": "https://www.riaa.com/gold-platinum/?tab_active=default-award&ar=Busta+Rhymes&ti=Genesis&format=Album&type="
+      },
+      {
+        "label": "Billboard 200",
+        "url": "https://www.billboard.com/artist/busta-rhymes/chart-history/tlp/"
+      },
+      {
+        "label": "Billboard R&B/Hip-Hop",
+        "url": "https://www.billboard.com/artist/busta-rhymes/chart-history/blp/"
+      },
+      {
+        "label": "Billboard Hot 100",
+        "url": "https://www.billboard.com/artist/busta-rhymes/chart-history/hsi/"
+      }
+    ]
+  },
+  {
+    "artist": "Busta Rhymes",
+    "album": "It Ain’t Safe No More...",
+    "links": [
+      {
+        "label": "RIAA",
+        "url": "https://www.riaa.com/gold-platinum/?tab_active=default-award&ar=Busta+Rhymes&ti=It+Ain%27t+Safe+No+More&format=Album&type="
+      },
+      {
+        "label": "Billboard 200",
+        "url": "https://www.billboard.com/artist/busta-rhymes/chart-history/tlp/"
+      },
+      {
+        "label": "Billboard R&B/Hip-Hop",
+        "url": "https://www.billboard.com/artist/busta-rhymes/chart-history/blp/"
+      },
+      {
+        "label": "Billboard Hot 100",
+        "url": "https://www.billboard.com/artist/busta-rhymes/chart-history/hsi/"
+      }
+    ]
+  },
+  {
+    "artist": "Tinashe",
+    "album": "Nightride",
+    "links": [
+      {
+        "label": "Billboard 200",
+        "url": "https://www.billboard.com/artist/tinashe/chart-history/tlp/"
+      },
+      {
+        "label": "Billboard R&B/Hip-Hop",
+        "url": "https://www.billboard.com/artist/tinashe/chart-history/blp/"
+      },
+      {
+        "label": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-lists/20-best-rb-albums-of-2016-121830/"
+      }
+    ]
+  },
+  {
+    "artist": "Tinashe",
+    "album": "Joyride",
+    "links": [
+      {
+        "label": "Billboard 200",
+        "url": "https://www.billboard.com/artist/tinashe/chart-history/tlp/"
+      },
+      {
+        "label": "UK Charts",
+        "url": "https://www.officialcharts.com/albums/tinashe-joyride/"
+      }
+    ]
+  },
+  {
+    "artist": "Marsha Ambrosius",
+    "album": "Late Nights & Early Mornings",
+    "links": [
+      {
+        "label": "Billboard 200",
+        "url": "https://www.billboard.com/charts/billboard-200/2011-03-19/"
+      },
+      {
+        "label": "Billboard R&B/Hip-Hop",
+        "url": "https://www.billboard.com/charts/r-b-hip-hop-albums/2011-03-19/"
+      },
+      {
+        "label": "Billboard Hot 100",
+        "url": "https://www.billboard.com/charts/hot-100/2011-06-18/"
+      },
+      {
+        "label": "Billboard R&B: Far Away",
+        "url": "https://www.billboard.com/charts/r-b-hip-hop-songs/2011-06-18/"
+      },
+      {
+        "label": "Billboard R&B: Hope She Cheats",
+        "url": "https://www.billboard.com/charts/r-b-hip-hop-songs/2010-10-30/"
+      }
+    ]
+  },
+  {
+    "artist": "Marsha Ambrosius",
+    "album": "Friends & Lovers",
+    "links": [
+      {
+        "label": "Billboard 200",
+        "url": "https://www.billboard.com/charts/billboard-200/2014-08-02/"
+      },
+      {
+        "label": "Billboard R&B/Hip-Hop",
+        "url": "https://www.billboard.com/charts/r-b-hip-hop-albums/2014-08-02/"
+      },
+      {
+        "label": "Billboard R&B Albums",
+        "url": "https://www.billboard.com/charts/r-and-b-albums/2014-08-02/"
+      },
+      {
+        "label": "Billboard",
+        "url": "https://www.billboard.com/pro/marsha-ambrosius-r-and-b-hip-hop-albums/"
+      },
+      {
+        "label": "Billboard Adult R&B",
+        "url": "https://www.billboard.com/charts/hot-adult-r-and-b-airplay/2014-08-30/"
+      },
+      {
+        "label": "Billboard R&B Airplay",
+        "url": "https://www.billboard.com/charts/hot-r-and-b-hip-hop-airplay/2014-08-02/"
+      }
+    ]
+  },
+  {
+    "artist": "Swizz Beatz",
+    "album": "Split Personality",
+    "links": [
+      {
+        "label": "RIAA",
+        "url": "https://www.riaa.com/gold-platinum/?tab_active=default-award&ar=Cassidy&ti=Split+Personality&format=Album&type="
+      },
+      {
+        "label": "Billboard: Hotel",
+        "url": "https://www.billboard.com/music/music-news/hot-product-61-62464/"
+      },
+      {
+        "label": "Wiki: album",
+        "url": "https://en.wikipedia.org/wiki/Split_Personality_%28Cassidy_album%29"
+      },
+      {
+        "label": "Wiki: Hotel",
+        "url": "https://en.wikipedia.org/wiki/Hotel_%28Cassidy_song%29"
+      },
+      {
+        "label": "UK Charts",
+        "url": "https://www.officialcharts.com/artist/7541/cassidy-ft-r-kelly/"
+      },
+      {
+        "label": "Wiki: Get No Better",
+        "url": "https://en.wikipedia.org/wiki/Get_No_Better"
+      }
+    ]
+  },
+  {
+    "artist": "Swizz Beatz",
+    "album": "The Dirtiest Thirstiest",
+    "links": [
+      {
+        "label": "Billboard R&B/Hip-Hop",
+        "url": "https://www.billboard.com/artist/yung-wun/chart-history/blp/"
+      },
+      {
+        "label": "Billboard Rap Albums",
+        "url": "https://www.billboard.com/artist/yung-wun/chart-history/rlp/"
+      },
+      {
+        "label": "Billboard Heatseekers",
+        "url": "https://www.billboard.com/artist/yung-wun/chart-history/tln/"
+      },
+      {
+        "label": "Billboard Hot 100",
+        "url": "https://www.billboard.com/artist/yung-wun/chart-history/hsi/"
+      },
+      {
+        "label": "Billboard R&B Songs",
+        "url": "https://www.billboard.com/artist/yung-wun/chart-history/bsi/"
+      }
+    ]
+  },
+  {
+    "artist": "Swizz Beatz",
+    "album": "I’m a Hustla",
+    "links": [
+      {
+        "label": "RIAA",
+        "url": "https://www.riaa.com/gold-platinum/?tab_active=default-award&ar=Cassidy"
+      },
+      {
+        "label": "Billboard",
+        "url": "https://www.billboard.com/music/music-news/hot-product-61-62464/"
+      },
+      {
+        "label": "Wiki: album",
+        "url": "https://en.wikipedia.org/wiki/I%27m_a_Hustla"
+      },
+      {
+        "label": "Wiki: single",
+        "url": "https://en.wikipedia.org/wiki/I%27m_a_Hustla_%28song%29"
+      }
+    ]
+  },
+  {
+    "artist": "Swizz Beatz",
+    "album": "January Joy",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/January_Joy"
+      }
+    ]
+  },
+  {
+    "artist": "Swizz Beatz",
+    "album": "B.A.R.S. The Barry Adrian Reese Story",
+    "links": [
+      {
+        "label": "Billboard",
+        "url": "https://www.billboard.com/music/music-news/jay-z-leapfrogs-eagles-britney-for-no-1-debut-1047319/"
+      },
+      {
+        "label": "Wiki: album",
+        "url": "https://en.wikipedia.org/wiki/B.A.R.S._The_Barry_Adrian_Reese_Story"
+      },
+      {
+        "label": "Wiki: My Drink",
+        "url": "https://en.wikipedia.org/wiki/My_Drink_n_My_2_Step"
+      },
+      {
+        "label": "Wiki: Innocent Man",
+        "url": "https://en.wikipedia.org/wiki/Innocent_Man_%28Misunderstood%29"
+      }
+    ]
+  }
+]
