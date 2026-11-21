@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/portfolio.css';
+import references from '../data/references.json';
+
+const groups = [
+  { key: 'press', title: 'PRESS & INTERVIEWS' },
+  { key: 'industry', title: 'INDUSTRY REFERENCES' },
+];
+---
+
+<Layout title="References | Trevor Jerideau" description="Selected original press and industry references for Trevor Jerideau, with direct links to the publishers." noindex>
+  <a class="skip-link" href="#references">Skip to references</a>
+  <header class="site-header references-header">
+    <a class="wordmark" href="/" aria-label="Trevor Jerideau — portfolio home">TREVOR<br />JERIDEAU</a>
+    <a class="references-back mono" href="/">BACK TO PORTFOLIO <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="references-page page-pad" id="references">
+    <div class="section-kicker mono"><span>ORIGINAL SOURCES</span><span>PRESS / INDUSTRY</span></div>
+    <h1>REFERENCES<span>.</span></h1>
+    <p class="references-intro">Selected original reporting, interviews and industry records. Each link opens the source publication.</p>
+    {groups.map(group => {
+      const entries = references.filter(reference => reference.source_type === group.key);
+      return entries.length > 0 && <section class="references-group" aria-labelledby={`references-${group.key}`}>
+        <h2 class="mono" id={`references-${group.key}`}>{group.title}</h2>
+        <ul class="references-list">{entries.map(reference => <li>
+          <a class="reference-link" href={reference.url} target="_blank" rel="noopener noreferrer" aria-label={`${reference.title} — ${reference.publisher} (opens in a new tab)`}>
+            <span class="reference-meta mono">{reference.publisher}{reference.date && reference.date !== 'unknown' && <span> / {reference.date}</span>}</span>
+            <span class="reference-title">{reference.title}</span>
+            <span class="reference-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>)}</ul>
+      </section>;
+    })}
+    <a class="references-return mono" href="/">RETURN TO PORTFOLIO <span aria-hidden="true">↗</span></a>
+  </main>
+</Layout>
+
+<style>
+  .references-header { position: static; }
+  .references-back { padding: 10px 0; text-underline-offset: 6px; }
+  .references-back:hover, .references-return:hover { text-decoration: underline; }
+  .references-page { max-width: 1180px; margin: 0 auto; padding-top: 48px; padding-bottom: 72px; }
+  h1 { margin: 44px 0 24px; font-size: clamp(36px, 7.8vw, 108px); font-weight: 700; letter-spacing: -.065em; line-height: .95; overflow-wrap: anywhere; }
+  h1 span { color: var(--archive-gray); }
+  .references-intro { max-width: 600px; color: var(--archive-gray); font-size: 16px; line-height: 1.7; }
+  .references-group { margin-top: 48px; }
+  h2 { margin-bottom: 20px; color: var(--archive-gray); }
+  .references-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line-dark); }
+  .references-list li { border-bottom: 1px solid var(--line-dark); }
+  .reference-link { display: grid; grid-template-columns: minmax(0, 1fr) 24px; gap: 10px 24px; padding: 24px 0; }
+  .reference-meta { grid-column: 1; color: var(--archive-gray); font-size: 9px; }
+  .reference-title { grid-column: 1; font-size: clamp(18px, 2.1vw, 28px); font-weight: 500; letter-spacing: -.035em; line-height: 1.35; overflow-wrap: anywhere; }
+  .reference-arrow { grid-column: 2; grid-row: 1 / span 2; font-size: 23px; align-self: center; }
+  .reference-link:hover .reference-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+  .references-return { display: inline-block; margin-top: 40px; text-underline-offset: 6px; }
+  @media (max-width: 760px) {
+    .references-page { padding-top: 30px; padding-bottom: 48px; }
+    h1 { margin-top: 32px; font-size: 10.2vw; }
+    .references-intro { font-size: 14px; }
+    .references-group { margin-top: 36px; }
+    .reference-link { padding: 20px 0; gap: 8px 16px; }
+    .reference-meta { font-size: 8px; }
+    .references-back { font-size: 8px; }
+  }
+</style>
