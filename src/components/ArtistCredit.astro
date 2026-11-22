@@ -1,0 +1,26 @@
+---
+import musicLinks from '../data/music-links.json';
+import { albumDestination, linkedMusicNote } from '../lib/music-links';
+import AlbumSources from './AlbumSources.astro';
+
+interface Props {
+  artist: {
+    name: string;
+    category: string;
+    intro: string;
+    profile?: { url: string; service: string };
+    works: { album: string; year: string; role: string; note: string }[];
+  };
+  number: number;
+}
+
+const { artist, number } = Astro.props;
+---
+
+<details class="artist-row">
+  <summary><span class="artist-number mono">{String(number).padStart(2, '0')}</span><h3>{artist.name}</h3><span class="artist-category mono">{artist.category}</span><span class="artist-toggle" aria-hidden="true">+</span></summary>
+  <div class="artist-body"><p>{artist.intro}{artist.profile && <><br /><a class="artist-profile-link record-source-link mono" style="display:inline-block;margin-top:10px;font-size:9px" href={artist.profile.url} target="_blank" rel="noopener noreferrer" aria-label={`${artist.name} artist profile on ${artist.profile.service} (opens in a new tab)`}>ARTIST / {artist.profile.service} ↗</a></>}</p><div class="record-grid">{artist.works.map(work => {
+    const destination = albumDestination(musicLinks, artist.name, work.album);
+    return <article class="record"><span class="record-year mono">{work.year} / {work.role}</span><h4>{destination ? <a class="record-album-link" href={destination.url} target="_blank" rel="noopener noreferrer" aria-label={`Listen to ${work.album} on ${destination.service} (opens in a new tab)`}>{work.album}</a> : work.album}</h4><p>{linkedMusicNote(musicLinks, artist.name, work.note).map(part => part.destination ? <a class="record-song-link" href={part.destination.url} target="_blank" rel="noopener noreferrer" aria-label={`Listen to ${part.destination.title} on ${part.destination.service} (opens in a new tab)`}>{part.text}</a> : part.text)}</p><AlbumSources artist={artist.name} album={work.album} /></article>;
+  })}</div></div>
+</details>

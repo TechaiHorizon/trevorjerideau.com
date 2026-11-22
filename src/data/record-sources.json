@@ -288,5 +288,19 @@
         "url": "https://en.wikipedia.org/wiki/Innocent_Man_%28Misunderstood%29"
       }
     ]
+  },
+  {
+    "artist": "Monica",
+    "album": "New Life",
+    "links": [
+      {
+        "label": "Billboard 200",
+        "url": "https://www.billboard.com/music/music-news/lionel-richies-tuskegee-hits-no-1-on-billboard-200-493600/"
+      },
+      {
+        "label": "Billboard R&B/Hip-Hop",
+        "url": "https://www.billboard.com/charts/r-b-hip-hop-albums/2012-04-28/"
+      }
+    ]
   }
 ]

@@ -98,5 +98,17 @@
       { "title": "Back of da Club", "url": "https://music.apple.com/us/album/back-of-da-club-single/253196416", "service": "Apple Music" },
       { "title": "Blackout", "url": "https://music.apple.com/us/album/blackout-feat-snoop-dogg-single/476175766", "service": "Apple Music" }
     ]
+  },
+  {
+    "artist": "Monica",
+    "albums": [
+      { "title": "New Life", "url": "https://music.apple.com/us/album/new-life/509598955", "service": "Apple Music" }
+    ],
+    "singles": [
+      { "title": "It All Belongs to Me", "url": "https://music.apple.com/us/album/it-all-belongs-to-me/509598955?i=509598977", "service": "Apple Music" },
+      { "title": "Until It’s Gone", "url": "https://music.apple.com/us/album/until-its-gone/509598955?i=509598997", "service": "Apple Music" },
+      { "title": "Without You", "url": "https://music.apple.com/us/album/without-you/509598955?i=509598996", "service": "Apple Music" },
+      { "title": "Anything (To Find You)", "url": "https://music.apple.com/us/album/anything-to-find-you-feat-rick-ross/510442828?i=510443038", "service": "Apple Music" }
+    ]
   }
 ]

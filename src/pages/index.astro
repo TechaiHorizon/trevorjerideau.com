@@ -4,6 +4,7 @@ import '../styles/portfolio.css';
 import musicLinks from '../data/music-links.json';
 import { albumDestination, linkedMusicNote } from '../lib/music-links';
 import AlbumSources from '../components/AlbumSources.astro';
+import ArtistCredit from '../components/ArtistCredit.astro';
 
 const artists = [
   { name: 'Alicia Keys', category: 'ARTIST DEVELOPMENT / A&R', intro: 'An essential force in the making of two landmark albums.', works: [
@@ -41,6 +42,9 @@ const artists = [
   ] },
 ];
 const additionalArtists = ['A$AP Rocky', 'Monica'];
+const monica = { name: 'Monica', category: 'ALBUM PRODUCTION / A&R', intro: 'Album producer and A&R for Monica’s 2012 RCA release, New Life.', profile: { url: 'https://music.apple.com/us/artist/monica/334240', service: 'Apple Music' }, works: [
+  { album: 'New Life', year: '2012', role: 'Album producer / A&R', note: 'RCA release. No. 4 on the Billboard 200 and No. 2 on Top R&B/Hip-Hop Albums, with 69,000 first-week copies sold—her fifth consecutive top-10 album on the Billboard 200. Features the Brandy duet “It All Belongs to Me” and singles “Until It’s Gone” and “Without You.” The deluxe edition includes “Anything (To Find You),” featuring Rick Ross.' },
+] };
 const archive = [
   { file: 'trevor-jerideau-alicia-keys', label: 'Trevor Jerideau and Alicia Keys', alt: 'Trevor Jerideau and Alicia Keys' },
   { file: 'trevor-industry-event', label: 'Trevor Jerideau and Clive Davis', alt: 'Trevor Jerideau and Clive Davis' },
@@ -133,7 +137,7 @@ const lightOrder = grid.map((filled, index) => filled ? grid.slice(0, index).fil
             return <article class="record"><span class="record-year mono">{work.year} / {work.role}</span><h4>{destination ? <a class="record-album-link" href={destination.url} target="_blank" rel="noopener noreferrer" aria-label={`Listen to ${work.album} on ${destination.service} (opens in a new tab)`}>{work.album}</a> : work.album}</h4><p>{linkedMusicNote(musicLinks, artist.name, work.note).map(part => part.destination ? <a class="record-song-link" href={part.destination.url} target="_blank" rel="noopener noreferrer" aria-label={`Listen to ${part.destination.title} on ${part.destination.service} (opens in a new tab)`}>{part.text}</a> : part.text)}</p><AlbumSources artist={artist.name} album={work.album} /></article>;
           })}</div>}</div>
         </details>)}
-        {additionalArtists.map((name, index) => <div class="artist-row"><div class="artist-name-only"><span class="artist-number mono">{String(artists.length + index + 1).padStart(2, '0')}</span><h3>{name}</h3></div></div>)}
+        {additionalArtists.map((name, index) => name === monica.name ? <ArtistCredit artist={monica} number={artists.length + index + 1} /> : <div class="artist-row"><div class="artist-name-only"><span class="artist-number mono">{String(artists.length + index + 1).padStart(2, '0')}</span><h3>{name}</h3></div></div>)}
       </div>
       <div class="mentor-note"><span class="mono">EXECUTIVE COLLABORATION</span><p><strong>Clive Davis.</strong> A formative mentor and collaborator, from Arista to the launch of J Records.</p><span><a href="https://en.wikipedia.org/wiki/Clive_Davis" target="_blank" rel="noopener noreferrer" aria-label="Clive Davis on Wikipedia (opens in a new tab)" style="color:inherit">↗</a></span></div>
       <section class="soundtrack-work" id="soundtracks" aria-labelledby="soundtracks-heading">
