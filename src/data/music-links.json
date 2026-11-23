@@ -38,16 +38,16 @@
       { "title": "Joyride", "url": "https://music.apple.com/us/album/joyride/1363218539", "service": "Apple Music" }
     ],
     "singles": [
-      { "title": "2 On", "url": "https://music.apple.com/us/album/aquarius/911472229", "service": "Apple Music" },
-      { "title": "Pretend", "url": "https://music.apple.com/us/album/aquarius/911472229", "service": "Apple Music" },
-      { "title": "All Hands on Deck", "url": "https://music.apple.com/us/album/aquarius/911472229", "service": "Apple Music" },
-      { "title": "Company", "url": "https://music.apple.com/us/album/nightride/1171507241", "service": "Apple Music" },
-      { "title": "Party Favors", "url": "https://music.apple.com/us/album/nightride/1171507241", "service": "Apple Music" },
-      { "title": "Ride of Your Life", "url": "https://music.apple.com/us/album/nightride/1171507241", "service": "Apple Music" },
-      { "title": "No Drama", "url": "https://music.apple.com/us/album/joyride/1363218539", "service": "Apple Music" },
-      { "title": "Faded Love", "url": "https://music.apple.com/us/album/joyride/1363218539", "service": "Apple Music" },
-      { "title": "Me So Bad", "url": "https://music.apple.com/us/album/joyride/1363218539", "service": "Apple Music" },
-      { "title": "Stuck with Me", "url": "https://music.apple.com/us/album/joyride/1363218539", "service": "Apple Music" }
+      { "title": "2 On", "url": "https://music.apple.com/us/song/2-on-feat-schoolboy-q/911472254", "service": "Apple Music" },
+      { "title": "Pretend", "url": "https://music.apple.com/us/song/pretend-feat-a%24ap-rocky/911472263", "service": "Apple Music" },
+      { "title": "All Hands on Deck", "url": "https://music.apple.com/us/song/all-hands-on-deck/911472264", "service": "Apple Music" },
+      { "title": "Company", "url": "https://music.apple.com/us/song/company/1171507261", "service": "Apple Music" },
+      { "title": "Party Favors", "url": "https://music.apple.com/us/song/party-favors/1171507267", "service": "Apple Music" },
+      { "title": "Ride of Your Life", "url": "https://music.apple.com/us/song/ride-of-your-life/1171507266", "service": "Apple Music" },
+      { "title": "No Drama", "url": "https://music.apple.com/us/song/no-drama-feat-offset/1363219812", "service": "Apple Music" },
+      { "title": "Faded Love", "url": "https://music.apple.com/us/song/faded-love-feat-future/1363219996", "service": "Apple Music" },
+      { "title": "Me So Bad", "url": "https://music.apple.com/us/song/me-so-bad-feat-ty-dolla-%24ign-french-montana/1363219817", "service": "Apple Music" },
+      { "title": "Stuck with Me", "url": "https://music.apple.com/us/song/stuck-with-me-feat-little-dragon/1363219872", "service": "Apple Music" }
     ]
   },
   {
@@ -87,8 +87,8 @@
       { "title": "The Dirtiest Thirstiest", "url": "https://music.apple.com/us/album/the-dirtiest-thirstiest/271388912", "service": "Apple Music" }
     ],
     "singles": [
-      { "title": "Tear It Up", "url": "https://open.spotify.com/track/4ppoMdBh6uLdQFAsJxja7Z", "service": "Spotify" },
-      { "title": "Walk It, Talk It", "url": "https://open.spotify.com/track/2KKA7q7El0EZeqoUIkotuI", "service": "Spotify" }
+      { "title": "Tear It Up", "url": "https://music.apple.com/us/song/tear-it-up-feat-lil-flip-dmx-and-david-banner/271388988", "service": "Apple Music" },
+      { "title": "Walk It, Talk It", "url": "https://music.apple.com/us/song/walk-it-talk-it-feat-david-banner/271389012", "service": "Apple Music" }
     ]
   },
   {

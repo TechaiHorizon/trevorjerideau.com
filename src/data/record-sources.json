@@ -302,5 +302,25 @@
         "url": "https://www.billboard.com/charts/r-b-hip-hop-albums/2012-04-28/"
       }
     ]
+  },
+  {
+    "artist": "Jazmine Sullivan",
+    "album": "Reality Show",
+    "links": [
+      {
+        "label": "GRAMMYs",
+        "url": "https://www.grammy.com/artists/jazmine-sullivan/16103/"
+      }
+    ]
+  },
+  {
+    "artist": "Jazmine Sullivan",
+    "album": "Heaux Tales",
+    "links": [
+      {
+        "label": "GRAMMYs",
+        "url": "https://www.grammy.com/artists/jazmine-sullivan/16103/"
+      }
+    ]
   }
 ]
